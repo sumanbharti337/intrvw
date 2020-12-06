@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Appname</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+  <body>
+  <% if user_signed_in? %>
+
+    <%= link_to raw('<i class="fa fa-sign-out"></i>Logout'), destroy_user_session_path, method: :delete, :class => 'dropdown-item dropdown-footer pull-right' %>
+  <% end %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= yield :page_level_script %>
+  </body>
+</html>

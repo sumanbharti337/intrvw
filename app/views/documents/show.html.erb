@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Doc type:</strong>
+  <%= @document.doc_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+<ul>
+  <% @document.images.each do |file| %>
+    <% if (file.content_type == "image/jpeg" || file.content_type == "image/jpeg" || file.content_type == "image/png")%>
+    <li>
+      <%= image_tag file, :style=>"width:100px" %>
+    </li>
+      <% else %>
+      <li>
+        <%= link_to "#{file.filename}", file %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @document.patient.name %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

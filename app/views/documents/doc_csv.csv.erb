@@ -1,0 +1,3 @@
+<% @documents.each do |document| %>
+  <%= [document.name, document.doc_type].to_csv %>
+<% end %>

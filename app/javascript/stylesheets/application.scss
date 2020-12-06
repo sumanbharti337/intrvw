@@ -1,0 +1,87 @@
+//@import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
+//@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
+//@import '~@fortawesome/fontawesome-free';
+//@import "~ionicons/dist/scss/ionicons-icons";
+//@import "./_custom";
+//@import "./ee.css";
+//@import "stylesheets/home";
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++++++++Custom css+++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#error_explanation {
+  display: none;
+}
+
+.navbar-dark .media {
+  color: #333333;
+}
+
+.navbar-dark .dropdown-item {
+  color: #333333 !important;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.main-section-content-body {
+  margin-top: 56px;
+}
+
+.alert-custom {
+  position: fixed;
+  right: 7px;
+  top: 64px;
+  z-index: 9;
+}
+
+.dataTables_processing {
+  border-radius: 50%;
+  background-color: #c6d8d7;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+a.btn {
+  color: #ffffff;
+}
+
+a.btn-default {
+  color: #333333;
+}
+
+.nav-link:focus, .nav-link:hover {
+  text-decoration: none;
+  background: transparent;
+  color: #5b5b5b;
+  opacity: 0.7;
+}
+
+.remove-cursor-pointer {
+  cursor: default;
+}
+
+.select2-selection {
+  border-radius: 0px 4px 4px 0px !important;
+  height: 100% !important;
+  border: 1px solid #ced4da !important;
+}
+
+.select2-selection__arrow {
+  height: 100% !important;
+}
+
+.dataTables_wrapper {
+  padding: 0px;
+}
+
+.sidebar-li-p {
+  font-weight: 600;
+  font-size: 14px;
+}

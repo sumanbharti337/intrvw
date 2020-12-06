@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Documents</h1>
+
+<%= link_to 'New Document', new_document_path, :class => "btn btn-primary btn-sm" %>
+<%= link_to 'Go to Patients', patients_path, :class => "btn btn-warning btn-sm pull-right" %>
+<%= link_to "CSV", document_csv_path(format: "csv") %>
+<%= link_to "XML", document_xml_path(format: "xml") %>
+<%= link_to "jSON", document_json_path(format: "json") %>
+</br>
+<h3>Import</h3>
+<%= form_tag import_documents_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+</br>
+<!--<table class="table table-bordered table-striped table-condensed">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Doc type</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Patient</th>-->
+<!--      <th>Attachments</th>-->
+<!--      <th colspan="3">Actions</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+    <%# @documents.each do |document| %>
+<!--      <tr>-->
+<!--        <td><%#= document.doc_type %></td>-->
+<!--        <td><%#= document.name %></td>-->
+<!--        <td><%#= document.patient.name %></td>-->
+<!--        <td>-->
+          <%# document.images.each do |file| %>
+            <%# if (file.content_type == "image/jpeg" || file.content_type == "image/jpeg" || file.content_type == "image/png")%>
+<!--              <p>-->
+                <%#= image_tag file, :style=>"width:50px" %>
+<!--              </p>-->
+            <%# else %>
+<!--              <p>-->
+                <%#= link_to "#{file.filename}", file %>
+<!--              </p>-->
+            <%# end %>
+          <%# end %>
+<!--        </td>-->
+<!--        <td><%#= link_to 'Show', document %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_document_path(document) %></td>-->
+<!--        <td><%#= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--      </tr>-->
+    <%# end %>
+<!--  </tbody>-->
+<!--</table>-->
+
+
+
+<table id="documents-datatable" class="table table-bordered table-condensed table-striped dt-responsive display nowrap" data-source="<%= documents_path(format: :json) %>" style="width:100%">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Doc Type</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<% content_for :page_level_script do %>
+  <%= javascript_pack_tag 'documents' %>
+<% end %>
